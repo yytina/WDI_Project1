@@ -1,12 +1,17 @@
 'use strict';
 
+
 angular.module('LocalStorageModule').value('prefix', 'gaWdiDatabase');
-angular.module('ticketyApp',['LocalStorageModule'])//declaring modulex
+angular.module('ticketyApp',['LocalStorageModule','firebase'])//declaring modulex
   .config(function ($routeProvider){
     $routeProvider
       .when('/game_board',{
         templateUrl: 'views/game_board.html',
         controller:'GameBoardCtrl'
+      })
+      .when('/game_board/:id/:mySymbol', {
+        templateUrl: 'views/game_board.html',
+        controller: 'GameBoardCtrl'
       })
       .when('/how_to',{
         templateUrl: 'views/how_to.html',
@@ -15,6 +20,10 @@ angular.module('ticketyApp',['LocalStorageModule'])//declaring modulex
       .when('/',{
         templateUrl: 'views/main.html',
         controller:'MainCtrl'
+      })
+      .when('/match_player', {
+        templateUrl: 'views/match_player.html',
+        controller: 'MatchPlayerCtrl'
       })
       .otherwise({
         redirecTo:'/'

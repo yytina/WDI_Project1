@@ -1,0 +1,46 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tickey</title>
+    <meta name="description" content="Online Tic Tac Toe">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="styles/bf30923e.main.css">
+</head>
+  <body data-ng-app="ticketyApp">
+
+     <header>
+        <center><h1>Tickey<span class="e">T</span>ackety</h1></center>
+
+      </header>
+
+    <center><a data-ng-hide="is_play_now_page" href="/#/game_board"><button>Play Game</button></a> 
+    <a data-ng-hide="is_how_to_page" href="/#/how_to"><button>How to</button></a>
+    <a data-ng-hide="is_main_page" href="/#/main"><button>Home</button></a><br></center><br><br>
+
+
+     <div data-ng-view="" id="test-view"></div> 
+
+      
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="bower_components/angular-localstorage/angular-local-storage.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="https://cdn.firebase.com/v0/firebase.js"></script>;
+        <script src="https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js"></script>;
+
+       <script src="scripts/controllers/main.js"></script>
+
+         <script src="scripts/controllers/game_board.js"></script>
+         <script src="scripts/controllers/how_to.js"></script> 
+         <script src="scripts/directives/tickle_me.js"></script>
+
+
+</body>
+</html>

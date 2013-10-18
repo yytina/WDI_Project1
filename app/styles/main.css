@@ -7,7 +7,10 @@ margin:0;
 background-color:#EEECE0;
 
 }
-
+.how {
+    font-weight: bold;
+    color:green;
+}
 div.highlight {
     background: red;
     color: white;

@@ -1,26 +1,45 @@
 <div id="gameboard">
         <div class="row">
-          <div id="cell1" class="cell lt {{cells[0]}}" index=0 data={{cells[0]}} data-ng-click="handleClick($event)"> {{cells[0]}} </div>
-          <div id="cell2" class="cell mt {{cells[1]}}" index=1 data={{cells[1]}} data-ng-click="handleClick($event)">{{cells[1]}}</div>
-          <div id="cell3" class="cell rt {{cells[2]}}" index=2 data={{cells[2]}} data-ng-click="handleClick($event)">{{cells[2]}}</div>
+          <div id="cell1" class="cell lt {{cells[0]}}" index=0 data={{cells[0]}} data-ng-click="myClick($event)"> {{cells[0]}} </div>
+          <div id="cell2" class="cell mt {{cells[1]}}" index=1 data={{cells[1]}} data-ng-click="myClick($event)">{{cells[1]}}</div>
+          <div id="cell3" class="cell rt {{cells[2]}}" index=2 data={{cells[2]}} data-ng-click="myClick($event)">{{cells[2]}}</div>
         </div>
 
         <div class="row">
-          <div id="cell4" class="cell lc {{cells[3]}}" index=3 data={{cells[3]}} data-ng-click="handleClick($event)">{{cells[3]}}</div>
-          <div id="cell5" class="cell mc {{cells[4]}}" index=4 data={{cells[4]}} data-ng-click="handleClick($event)">{{cells[4]}}</div>
-          <div id="cell6" class="cell rc {{cells[5]}}" index=5 data={{cells[5]}} data-ng-click="handleClick($event)">{{cells[5]}}</div>
+          <div id="cell4" class="cell lc {{cells[3]}}" index=3 data={{cells[3]}} data-ng-click="myClick($event)">{{cells[3]}}</div>
+          <div id="cell5" class="cell mc {{cells[4]}}" index=4 data={{cells[4]}} data-ng-click="myClick($event)">{{cells[4]}}</div>
+          <div id="cell6" class="cell rc {{cells[5]}}" index=5 data={{cells[5]}} data-ng-click="myClick($event)">{{cells[5]}}</div>
         </div>
 
         <div class="row">
-          <div id="cell7" class="cell lb {{cells[6]}}" index=6 data={{cells[6]}} data-ng-click="handleClick($event)">{{cells[6]}}</div>
-          <div  id="cell8" class="cell mb {{cells[7]}}" index=7 data={{cells[7]}} data-ng-click="handleClick($event)">{{cells[7]}}</div>
-          <div  id="cell9" class="cell rb {{cells[8]}}" index=8 data={{cells[8]}} data-ng-click="handleClick($event)">{{cells[8]}}</div>
+          <div id="cell7" class="cell lb {{cells[6]}}" index=6 data={{cells[6]}} data-ng-click="myClick($event)">{{cells[6]}}</div>
+          <div  id="cell8" class="cell mb {{cells[7]}}" index=7 data={{cells[7]}} data-ng-click="myClick($event)">{{cells[7]}}</div>
+          <div  id="cell9" class="cell rb {{cells[8]}}" index=8 data={{cells[8]}} data-ng-click="myClick($event)">{{cells[8]}}</div>
         </div>
       </div>
     </div>
 
    <center> 
     <button data-ng-hide="is_restart" data-ng-click = "restartGame($event)"> Restart</button>
-    <h3 >Single Player: <span class="x">x</span></h3>
+    <h3 >Current Player: <span class="{{turn}}">{{turn}}</span></h3>
 <button data-ng-click="starter()">Start</button><button data-ng-click="stopper()">Stop</button>
- <div> {{minutes}}: {{seconds}}</div></center>
+ <div> {{minutes}}: {{seconds}}</div>
+<button data-ng-click = "getName()"> Name please </button>
+ <button data-ng-click = "addWinToLeaderBoard()">Add Win! </button> </center>
+
+ <center>{{gameId}}</center>
+ <center>{{symbol}}</center>
+ <center>{{turnMsg}}</center>
+ <center>{{existWinner()}}</center>
+ <center>winner:{{winner}}</center>
+ <center><h1 data-ng-hide="!isLosing()">Losing</h1></center>
+ <center>gameBoard: {{gameBoard}}</center>
+ <center>cells: {{cells}}</center>
+ <!-- to order
+ create filter
+ or restructure things  -->
+
+ <!-- <ul>
+    <li>LeaderBoard!</li>
+    <li data-ng-repeat = "(name, score)" in leaderData.name" >{{name}} : {{score}} </li>
+ </ul> -->
